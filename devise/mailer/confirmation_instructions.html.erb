@@ -1,0 +1,9 @@
+<div class="text-lg font-semibold text-gray-700 md:w-1/2 md:mx-auto">
+  <p class="text-base text-gray-700">
+    Bem-vindo <%= @user.email %>!
+    <br />Você pode confirmar o seu endereço de e-mail através do link abaixo:
+  </p>
+  <p class="mt-2 truncate">
+    <%= link_to 'Confirmar minha conta', confirmation_url(@user, confirmation_token: @token), class: "text-blue-600 hover:underline" %>
+  </p>
+</div>

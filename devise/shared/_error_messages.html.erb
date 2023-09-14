@@ -1,0 +1,15 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation" data-turbo-cache="false" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-4 rounded">
+    <h2 class="text-xl font-semibold">
+      <%= I18n.t("errors.messages.nao_salvo",
+                 count: resource.errors.count,
+                 resource: resource.class.model_name.human.downcase)
+       %>
+    </h2>
+    <ul class="list-disc list-inside mt-2">
+      <% resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

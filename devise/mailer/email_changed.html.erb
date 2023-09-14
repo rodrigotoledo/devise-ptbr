@@ -1,0 +1,10 @@
+<div class="text-lg font-semibold text-gray-700 md:w-1/2 md:mx-auto">
+  <p class="text-base text-gray-700">
+    Olá <%= @user.email %>!
+    <% if @user.try(:unconfirmed_email?) %>
+      <br />Estamos entrando em contato para informar que seu email está sendo alterado para <%= @user.unconfirmed_email %>.
+    <% else %>
+      <br />Estamos entrando em contato para informar que seu email foi alterado para <%= @user.email %>.
+    <% end %>
+  </p>
+</div>
